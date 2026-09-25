@@ -1,0 +1,35 @@
+{
+  "name": "nowrun-expo",
+  "version": "1.0.0",
+  "description": "Expose an app's own functions to a bridge-sdk client app over AIDL.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build",
+    "android",
+    "src",
+    "expo-module.config.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "expo",
+    "react-native",
+    "android",
+    "aidl",
+    "bridge"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.10",
+    "expo-modules-core": "~3.0.30",
+    "react": "^19.2.3",
+    "typescript": "~5.9.2"
+  }
+}

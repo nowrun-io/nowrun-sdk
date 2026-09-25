@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.example.bridge'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        // Travels with the AAR: the host app's R8 run picks these up automatically.
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildFeatures {
+        aidl true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

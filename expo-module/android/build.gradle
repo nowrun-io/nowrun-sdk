@@ -1,0 +1,24 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'gg.now.expo'
+version = '1.0.0'
+
+android {
+  namespace "gg.now.expo"
+  defaultConfig {
+    minSdkVersion 24
+    // expo-module-gradle-plugin reads both for the module's own metadata.
+    versionCode 1
+    versionName "1.0.0"
+  }
+}
+
+dependencies {
+  // The bridge contract, as classes.jar out of sdk's AAR: an Android library
+  // cannot take a direct local .aar dependency. The AAR carries no resources — only the
+  // manifest entries, which this module's own AndroidManifest.xml re-declares.
+  api files('libs/bridge.jar')
+}

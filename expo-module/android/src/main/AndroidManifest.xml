@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Merged into the integrating app, so it declares nothing itself. Without <queries>
+         the client is invisible on Android 11+ and every bind fails silently. -->
+    <queries>
+        <package android:name="gg.now.player" />
+    </queries>
+
+    <application>
+        <!-- Not exported: the client is handed this binder, it never binds the service. -->
+        <service
+            android:name="gg.now.bridge.ProviderService"
+            android:exported="false" />
+    </application>
+</manifest>

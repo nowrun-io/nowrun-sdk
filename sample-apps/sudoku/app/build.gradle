@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.sudoku'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.example.sudoku'
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    signingConfigs {
+        release {
+            // Shared sample keystore, checked in next to the projects.
+            storeFile file('../../sample-release.jks')
+            storePassword 'sample123'
+            keyAlias 'sample'
+            keyPassword 'sample123'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            // The SDK builds its contract by reflection, so nothing may be renamed away.
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation files('libs/bridge-release.aar')
+}

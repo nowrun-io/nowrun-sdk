@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Drape command channel
+  version: "1.0"
+servers:
+  - url: https://nowrun-drape.vercel.app
+paths:
+  /api/command:
+    get:
+      operationId: getState
+      summary: Read the app's current state, full catalogue, and latest render
+      parameters:
+        - name: state
+          in: query
+          required: true
+          schema: { type: string, enum: ["1"] }
+      responses:
+        "200":
+          description: Current app state
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state: { type: object }
+    post:
+      operationId: sendCommand
+      summary: Send one command to the Drape app
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [command]
+              properties:
+                command:
+                  type: object
+                  description: One Drape command, e.g. {"tool":"swap_item","slot":"shoes","id":"sho_03"}
+                  properties:
+                    tool: { type: string }
+                  additionalProperties: true
+      responses:
+        "200":
+          description: Queued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string }
+                  queued: { type: boolean }

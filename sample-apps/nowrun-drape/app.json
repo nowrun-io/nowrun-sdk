@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Drape",
+    "slug": "nowrun-drape",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon-drape-square.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.nowrun.drape",
+      "adaptiveIcon": {
+        "backgroundColor": "#FAF3E3",
+        "foregroundImage": "./assets/icon-drape-square.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon-drape.png"
+    },
+    "owner": "arastu-bst"
+  }
+}

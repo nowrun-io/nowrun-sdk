@@ -1,0 +1,6 @@
+# Native Android build tree (1.5 GB, incl. the release APK) - the Vercel build
+# is `expo export --platform web` and never touches it.
+android/
+node_modules/
+.expo/
+*.apk

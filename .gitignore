@@ -1,0 +1,14 @@
+# Gradle
+.gradle/
+.kotlin/
+build/
+local.properties
+
+# Node
+node_modules/
+
+# The SDK as each app consumes it, copied in by the app's build.sh from sdk's AAR.
+/expo-module/android/libs/
+/sample-apps/sudoku/app/libs/
+
+.DS_Store

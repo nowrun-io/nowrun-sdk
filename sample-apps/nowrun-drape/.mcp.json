@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "nowgg-docs": {
+      "type": "http",
+      "url": "https://dev-docs.testngg.net/mcp"
+    }
+  }
+}
